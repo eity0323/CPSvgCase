@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ffff">
+
+    <!--<com.sien.app.main.widget.tpsvg.DynamicSvgPathView-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/pathView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:pathColor="@android:color/white"-->
+    <!--app:svg="@raw/mushrooms"-->
+    <!--android:visibility="gone"-->
+    <!--app:pathWidth="5"/>-->
+
+    <com.sien.cpsvgcase.widgets.DynamicSvgView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pathView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:pathColor="@android:color/white"
+        app:svg="@raw/web_animals"
+        android:visibility="gone"
+        app:pathWidth="5"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:id="@+id/svgIV"/>
+</LinearLayout>
