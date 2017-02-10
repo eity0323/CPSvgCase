@@ -3,7 +3,6 @@ package com.sien.cpsvgcase.widgets;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
@@ -79,9 +78,9 @@ public class DynamicSvgView extends View {
      */
     public DynamicSvgView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-//        paint.setStyle(Paint.Style.STROKE);
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.WHITE);
+        paint.setStyle(Paint.Style.STROKE);
+//        paint.setStyle(Paint.Style.FILL);
+//        paint.setColor(Color.WHITE);
         getFromAttributes(context, attrs);
 
         width = CPScreenUtil.getScreenWidth(context);

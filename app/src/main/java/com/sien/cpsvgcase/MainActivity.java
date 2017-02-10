@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -43,20 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
         mcontext = this;
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                retrofitImageMultiDownload();
-            }
-        },500);
+        drawMultiByManual();
     }
 
     private void loadSvgSource(){
         ImageView iv = (ImageView) findViewById(R.id.svgIV);
+        iv.setVisibility(View.VISIBLE);
         ImageRequest.create(iv)
-//                .setTargetAsset("grooming.svg") // ok
+                .setTargetAsset("grooming.svg") // ok
 //                .setTargetResource(R.raw.web_landscape, ImageUtils.ImageType.SVG) // ok
-                .setTargetUrl(url)//ok
+//                .setTargetUrl(url)//ok
 //                .setTargetFile(new File("/sdcard/Download/grooming.svg")) //ok
                 .execute();
     }
@@ -67,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         pathView.setVisibility(View.VISIBLE);
         pathView.setFillAfter(true);
         pathView.useNaturalColors();
+        pathView.setSvgResource(R.raw.web_animals);
         pathView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
     /*绘制静态svg*/
     private void staticDrawSvg(){
-        final DynamicSvgView pathView = (DynamicSvgView) findViewById(R.id.pathView);
+        final DynamicSvgView pathView = (DynamicSvgView) findViewById(R.id.pathSvgView);
         pathView.setVisibility(View.VISIBLE);
         pathView.setFillAfter(true);
         pathView.useNaturalColors();
-//        pathView.setSvgResource(R.raw.red_shoe);
+        pathView.setSvgResource(R.raw.web_animals);
         pathView.setup();
     }
 
